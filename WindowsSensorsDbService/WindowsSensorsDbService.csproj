@@ -75,9 +75,9 @@
     <Compile Include="Installer.Designer.cs">
       <DependentUpon>Installer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202406301522487_InitialCreate.cs" />
-    <Compile Include="Migrations\202406301522487_InitialCreate.Designer.cs">
-      <DependentUpon>202406301522487_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202406301557105_InitialCreate.cs" />
+    <Compile Include="Migrations\202406301557105_InitialCreate.Designer.cs">
+      <DependentUpon>202406301557105_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ComputerEntity.cs" />
@@ -97,8 +97,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202406301522487_InitialCreate.resx">
-      <DependentUpon>202406301522487_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202406301557105_InitialCreate.resx">
+      <DependentUpon>202406301557105_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

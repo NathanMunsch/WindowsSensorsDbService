@@ -14,8 +14,7 @@
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                     })
-                .PrimaryKey(t => t.Id)
-                .Index(t => t.Name, unique: true);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.DateMeasurementEntities",
@@ -51,7 +50,6 @@
             DropForeignKey("dbo.MeasurementEntities", "DateMeasurementEntityId", "dbo.DateMeasurementEntities");
             DropIndex("dbo.MeasurementEntities", new[] { "DateMeasurementEntityId" });
             DropIndex("dbo.DateMeasurementEntities", new[] { "ComputerEntityId" });
-            DropIndex("dbo.ComputerEntities", new[] { "Name" });
             DropTable("dbo.MeasurementEntities");
             DropTable("dbo.DateMeasurementEntities");
             DropTable("dbo.ComputerEntities");

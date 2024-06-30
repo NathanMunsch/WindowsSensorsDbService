@@ -34,10 +34,6 @@ namespace WindowsSensorsDbService.Data
                 .WithRequired(m => m.DateMeasurementEntity)
                 .HasForeignKey(m => m.DateMeasurementEntityId);
 
-            modelBuilder.Entity<ComputerEntity>()
-                .HasIndex(c => c.Name)
-                .IsUnique();
-
             base.OnModelCreating(modelBuilder);
         }
     }
