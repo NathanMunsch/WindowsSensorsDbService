@@ -15,6 +15,7 @@ namespace WindowsSensorsDbService.Data
         public DbSet<ComputerEntity> ComputerEntities { get; set; }
         public DbSet<DateMeasurementEntity> DateMeasurementEntities { get; set; }
         public DbSet<MeasurementEntity> MeasurementEntities { get; set; }
+        public DbSet<HardwareEntity> HardwareEntities { get; set; }
 
         public DataContext() : base(ConnectionString.GetConnectionString())
         {
@@ -27,12 +28,20 @@ namespace WindowsSensorsDbService.Data
             modelBuilder.Entity<ComputerEntity>()
                 .HasMany(c => c.DateMeasurementEntities)
                 .WithRequired(dm => dm.ComputerEntity)
-                .HasForeignKey(dm => dm.ComputerEntityId);
+                .HasForeignKey(dm => dm.ComputerEntityId)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<DateMeasurementEntity>()
                 .HasMany(dm => dm.MeasurementEntities)
                 .WithRequired(m => m.DateMeasurementEntity)
-                .HasForeignKey(m => m.DateMeasurementEntityId);
+                .HasForeignKey(m => m.DateMeasurementEntityId)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<HardwareEntity>()
+                .HasMany(h => h.MeasurementEntities)
+                .WithRequired(m => m.HardwareEntity)
+                .HasForeignKey(m => m.HardwareEntityId)
+                .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }

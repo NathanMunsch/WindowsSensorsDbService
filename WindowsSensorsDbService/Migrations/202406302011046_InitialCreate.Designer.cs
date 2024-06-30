@@ -13,7 +13,7 @@ namespace WindowsSensorsDbService.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202406301557105_InitialCreate"; }
+            get { return "202406302011046_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

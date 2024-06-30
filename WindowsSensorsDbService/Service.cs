@@ -77,6 +77,15 @@ namespace WindowsSensorsDbService
                 // Iterate through all the hardware and sensors and add them to the database
                 foreach (var hardware in computer.Hardware)
                 {
+                    // Check if the hardware exists in the database or create a new one
+                    HardwareEntity hardwareEntity = _context.HardwareEntities.FirstOrDefault(h => h.Name == hardware.Name);
+                    if (hardwareEntity == null)
+                    {
+                        hardwareEntity = new HardwareEntity { Name = hardware.Name };
+                        _context.HardwareEntities.Add(hardwareEntity);
+                    }
+
+                    // Iterate through all the sensors and add the measurements to the database
                     foreach (var sensor in hardware.Sensors)
                     {
                         string sensorValue = sensor.Value.HasValue ? sensor.Value.Value.ToString() : "N/A";
@@ -87,7 +96,8 @@ namespace WindowsSensorsDbService
                             SensorName = sensor.Name,
                             MeasuredValue = sensorValue,
                             Unit = unit,
-                            DateMeasurementEntity = dateMeasurementEntity
+                            DateMeasurementEntity = dateMeasurementEntity,
+                            HardwareEntity = hardwareEntity
                         });
                     }
                 }

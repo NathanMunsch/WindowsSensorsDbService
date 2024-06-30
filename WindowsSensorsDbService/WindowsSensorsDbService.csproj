@@ -75,13 +75,14 @@
     <Compile Include="Installer.Designer.cs">
       <DependentUpon>Installer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202406301557105_InitialCreate.cs" />
-    <Compile Include="Migrations\202406301557105_InitialCreate.Designer.cs">
-      <DependentUpon>202406301557105_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202406302011046_InitialCreate.cs" />
+    <Compile Include="Migrations\202406302011046_InitialCreate.Designer.cs">
+      <DependentUpon>202406302011046_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ComputerEntity.cs" />
     <Compile Include="Models\DateMeasurementEntity.cs" />
+    <Compile Include="Models\HardwareEntity.cs" />
     <Compile Include="Models\MeasurementEntity.cs" />
     <Compile Include="Service.cs">
       <SubType>Component</SubType>
@@ -97,8 +98,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202406301557105_InitialCreate.resx">
-      <DependentUpon>202406301557105_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202406302011046_InitialCreate.resx">
+      <DependentUpon>202406302011046_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
