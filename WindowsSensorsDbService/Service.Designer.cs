@@ -1,6 +1,6 @@
 ﻿namespace WindowsSensorsDbService
 {
-    partial class Service1
+    partial class Service
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
