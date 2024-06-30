@@ -16,6 +16,7 @@ This project is a Windows Service designed to collect sensor data from various s
 
 - Windows operating system
 - .NET Framework 4.7.2 or later
+- Microsoft SQL Server
 
 ### Configuration
 
