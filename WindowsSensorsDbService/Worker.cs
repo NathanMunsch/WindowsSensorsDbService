@@ -12,10 +12,10 @@ public class Worker : BackgroundService
     private readonly DataContext _dbContext;
     private Computer computer;
 
-    public Worker(ILogger<Worker> logger, DataContext dbContext)
+    public Worker(ILogger<Worker> logger)
     {
         _logger = logger;
-        _dbContext = dbContext;
+        _dbContext = new DataContext(new DbContextOptionsBuilder<DataContext>().UseSqlServer(ConnectionString.GetConnectionString()).Options);
         _dbContext.Database.Migrate();
 
         computer = new Computer
